@@ -1,4 +1,5 @@
 #Folders
-cmake-build-debug/
-.idea/
-build/
+cmake-build-debug
+.vscode
+.idea
+build
