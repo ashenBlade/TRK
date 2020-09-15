@@ -1,9 +1,12 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.0)
 project(TRK)
 
 set(CMAKE_CXX_STANDARD 14)
+add_definitions(-Wall -Wextra -std=c++14)
 
-include_directories(data-structs)
-set(DATA_STRUCTS_SOURCES trk_vector.h trk_vector.cpp)
+add_executable(${PROJECT_NAME}  main.cpp
+                                data_structs/trk_vector.h)
 
-add_library(TRK SHARED TRK.cpp ${DATA_STRUCTS_SOURCES})
+target_include_directories( ${PROJECT_NAME}
+        PUBLIC
+        ${PROJECT_SOURCE_DIR}/data_structs)
